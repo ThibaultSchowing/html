@@ -31,7 +31,7 @@ if (isset($_GET['user']) && !empty($_GET['user']) && is_numeric($_GET['user']) &
     $userRole = getUserRole($userId);
     $currentUserId = $_SESSION['userId'];
 
-    // Si c'est un admin, on ne change pas son role s'il est le seul
+    // Si c'est un admin, on ne change pas son role s'il est le seul (de base on devrait jamais arriver ici vu qu'on peut pas se supprimer/changer de role soi-même)
     if ($userRole == 1 && $nbAdmins <= 1) {
         header("Location: http://localhost/html/admin.php?msg=oneAdmin");
         exit();

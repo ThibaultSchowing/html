@@ -19,8 +19,6 @@ if ($_GET['CSRFToken'] == $_SESSION["CSRFtoken"]) {
     session_destroy();
 }
 
-
-
 header("Location: http://localhost/html/index.php");
 exit();
 ?>

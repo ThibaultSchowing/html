@@ -18,6 +18,9 @@ session_start();
 include("checkUserSession.php");
 include("databaseConnection.php");
 include("functions.php");
+
+//Reload CSRF
+$_SESSION["CSRFtoken"] = md5(uniqid(mt_rand(), true)); 
 ?>
 
 <!DOCTYPE HTML> 
@@ -82,9 +85,10 @@ foreach ($result as $row) {
 
                 $name = getUserName($row['message_sender_id']);
                 ?>
+				
 
                 <tr>
-    <?php echo "<td>" . $row['message_time'] . "</td>"; ?>
+					<?php echo "<td>" . $row['message_time'] . "</td>"; ?>
                     <?php echo "<td>" . $name . "</td>"; ?>
                     <?php echo "<td>" . $row['message_subject'] . "</td>"; ?>
                     <?php echo "<td><a class=\"btn btn-primary\" href=\"newMessage.php?message_receiver_id=" . htmlspecialchars($row['message_sender_id']) . "&message_subject=" . htmlspecialchars($row['message_subject']) . "\"> Reply </a></td>"; ?>

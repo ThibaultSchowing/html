@@ -13,7 +13,6 @@
 <?php
 session_start();
 include("checkUserSession.php");
-include("databaseConnection.php");
 include("functions.php");
 //$from = $_SESSION['userId'];
 ?>

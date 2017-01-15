@@ -111,6 +111,8 @@ include("password.php");
                 <input type="checkbox" name="nobot" required="true">Je confirme être un humain.
 				<br/>
                 <!--CSRF protection -->
+				<?php //Reload CSRF
+				$_SESSION["CSRFtoken"] = md5(uniqid(mt_rand(), true)); ?>
                 <input type="hidden" name="CSRFToken" value="<?php echo htmlspecialchars($_SESSION["CSRFtoken"]); ?>">
 				<br/>
                 <div class="container">

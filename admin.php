@@ -29,6 +29,8 @@ include("functions.php");
 
     <body>  
         <?php include("includes/menu.php"); ?>
+		<?php //Reload CSRF
+				$_SESSION["CSRFtoken"] = md5(uniqid(mt_rand(), true)); ?>
 
         <h1>STI Administrator page</h1>
         <h2></h2>
@@ -36,22 +38,28 @@ include("functions.php");
         <?php
         $users = getUsers();
         // Gestion des erreurs GET
-        // Messages de confirmation de suppression de messages etc
+        // Messages de confirmation de suppression de messages etc msg=stateSwitched
         if (isset($_GET['msg'])) {
             if ($_GET['msg'] == "ok") {
-                echo "<div class=\"container\"><div class=\"alert alert-success\"><a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a><strong>Success!</strong> Role switched.</div></div>";
+                echo "<div class=\"container\"><div class=\"alert alert-success\"><a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a><strong>Success !</strong> Role switched.</div></div>";
             } else if ($_GET['msg'] == "self") {
-                echo "<div class=\"container\"><div class=\"alert alert-warning\"><a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a><strong>Error!</strong> You cannot change your own role.</div></div>";
+                echo "<div class=\"container\"><div class=\"alert alert-warning\"><a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a><strong>Error !</strong> You cannot change your own role.</div></div>";
             } else if ($_GET['msg'] == "noUser") {
-                echo "<div class=\"container\"><div class=\"alert alert-warning\"><a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a><strong>Error!</strong> No valid user.</div></div>";
+                echo "<div class=\"container\"><div class=\"alert alert-warning\"><a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a><strong>Error !</strong> No valid user.</div></div>";
             } else if ($_GET['msg'] == "oneAdmin") {
-                echo "<div class=\"container\"><div class=\"alert alert-warning\"><a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a><strong>Error!</strong> There must be at least one administrator. </div></div>";
+                echo "<div class=\"container\"><div class=\"alert alert-warning\"><a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a><strong>Error !</strong> There must be at least one administrator. </div></div>";
             } else if ($_GET['msg'] == "created") {
                 echo "<div class=\"container\"><div class=\"alert alert-success\"><a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a><strong>Yeah !</strong> User created successfully ! </div></div>";
             } else if ($_GET['msg'] == "deleted") {
                 echo "<div class=\"container\"><div class=\"alert alert-success\"><a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a><strong>Yeah !</strong> User deleted successfully ! </div></div>";
             } else if ($_GET['msg'] == "pwdChanged") {
                 echo "<div class=\"container\"><div class=\"alert alert-success\"><a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a><strong>Yeah !</strong> Password changed successfully ! </div></div>";
+            } else if ($_GET['msg'] == "deletionErrorAdmin") {
+                echo "<div class=\"container\"><div class=\"alert alert-warning\"><a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a><strong>Error !</strong> Cannot delete the last admin ! </div></div>";
+            } else if ($_GET['msg'] == "deletionError") {
+                echo "<div class=\"container\"><div class=\"alert alert-warning\"><a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a><strong>Error !</strong> A wild generic error appeared ! </div></div>";
+            } else if ($_GET['msg'] == "stateSwitched") {
+                echo "<div class=\"container\"><div class=\"alert alert-success\"><a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a><strong>Success !</strong> State switched successfully ! </div></div>";
             }
         }
         ?>

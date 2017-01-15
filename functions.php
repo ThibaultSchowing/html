@@ -7,6 +7,7 @@
   Auteurs     : Thibault Schowing, Sébastien Henneberger
   Date        : 12.10.2016
   Description : Fonctions permettant de manipuler la base de donnée :
+  - deleteuser()
   - verifyId()
   - getUserName()
   - getUsers()
@@ -21,10 +22,44 @@
   Utile: http://php.net/manual/fr/mysqli-stmt.bind-param.php
   ---------------------------------------------------------------------------
  */
+ 
+ /*
+ 
+ 
+ */
+ 
+ function deleteMessage($id){
+	include("databaseConnection.php");
+    $sql = "DELETE FROM messages where message_id = :id"; 
+    $sth = $file_db->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+    $sth->execute(array(':id' => $id));
+    $file_db = null;
+    return;
+ }
+ 
+ 
+ 
+ /*
+	Suppression d'un utilisateur
+	Paramètre: id de l'utilisateur
+ 
+ */
+ 
+ function deleteUser($id){
+	include("databaseConnection.php");
+    $sql = "UPDATE users SET user_deleted = '1' WHERE user_id = :id"; 
+    $sth = $file_db->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+    $sth->execute(array(':id' => $id));
+
+    $file_db = null;
+    return;
+	
+ }
+ 
 
 /*
-  Fonctions utilisées pour les captcha
-
+	Fonctions utilisées pour les captcha
+	
 
  */
 
@@ -103,7 +138,7 @@ function getUserName($id) {
 }
 
 /*
-
+	
  */
 
 function getUserRoleActive($userId) {
@@ -316,6 +351,26 @@ function getUserRole($userId) {
 }
 
 /*
+  Récupère le status d'un utilisateur
+  Paramètre: $userId
+ */
+
+function getUserStatus($userId) {
+    include("databaseConnection.php");
+    $sql = "SELECT user_active FROM users WHERE user_id = :id ";
+    $sth = $file_db->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+
+    $sth->execute(array(':id' => $userId));
+
+    // Résultats associatif -> par nom (je crois)
+    $result = $sth->fetch(PDO::FETCH_ASSOC);
+
+    //echo "<br/> debug: " . $result['user_role'];
+    $file_db = null;
+    return $result['user_active'];
+}
+
+/*
   Définit le rôle de l'utilisateur (user / admin) -> (0/1)
   Paramètres: Id de l'utilisateur, 0 si user et 1 si admin
  */
@@ -337,7 +392,7 @@ function setUserRole($userId, $role) {
 
 function getNumberOfAdmin() {
     include("databaseConnection.php");
-    $sql = "SELECT count(user_role) as nb FROM users GROUP BY user_role HAVING user_role = 1 AND user_active = 1";
+    $sql = "Select count(user_name) as nb from users where user_role = 1 AND user_active = 1";
     $admins = $file_db->query($sql);
     $admins->setFetchMode(PDO::FETCH_ASSOC);
     $admins = $admins->fetch();
