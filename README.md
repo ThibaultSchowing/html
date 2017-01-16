@@ -88,6 +88,8 @@ For all of the security features we suppose that the site is running under an SS
 Password policy: we should force the user to use alphanumerical and special caracters.
 Anti CSRF: only a beggining, not realy secure -> lack of time
 Redirection to 404 should be done if access id denied AND if page doesn't exist to avoid information disclosure.
+Admin can change/reset password of everybody -> dangerous fonctionnality, better to use email to reset password
+
 
 
 ## Sanitizing user inputs
