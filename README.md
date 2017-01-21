@@ -84,14 +84,12 @@ All pages are the same for the admin, except the <i>Administration page</i> that
 
 # Web site security remarks
 
-For all of the security features we suppose that the site is running under an SSL connection.
-Password policy: we should force the user to use alphanumerical and special caracters.
-Anti CSRF: only a beggining, not realy secure -> lack of time
-Redirection to 404 should be done if access id denied AND if page doesn't exist to avoid information disclosure.
-Admin can change/reset password of everybody -> dangerous fonctionnality, better to use email to reset password
+* For all of the security features we suppose that the site is running under an SSL connection.
 
+* Password policy: it can be reinforced but for tests purpose we've let it simple (8 caracters or more).
 
+* Anti CSRF: each form is secured with it
 
-## Sanitizing user inputs
+* Redirection to 404 should be done if access id denied AND if page doesn't exist to avoid information disclosure.
 
-## CSRF Tokens
+* Admin can change/reset password of everybody -> dangerous fonctionnality, better to use email to reset password
