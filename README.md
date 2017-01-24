@@ -1,8 +1,32 @@
 # Set up and user manual
 
-## Set up
+## Set up for WAMP server
 
-1. Clone the repo https://github.com/Shenn299/html.git  in /var/www/ AFTER having removed the previous <i>http</i> folder.
+1. Clone the repo https://github.com/ThibaultSchowing/html.git  in WAMP's www directory AFTER having removed any previous <i>http</i> folder.
+
+2. Install phpLiteAdmin_v1-9-6 (also in www directory) or other version, you will have to adapt the url. You can download it at https://www.phpliteadmin.org/download/ 
+
+3. Launch WAMP (or equivalent LAMP or MAMP) and verify the information in "databaseConnection.php" (set to WAMP default)
+
+4. Go to http://localhost/phpliteadmin_v1-9-6/phpliteadmin.php and create a database named "database.sqlite"
+
+5. Go to page http://localhost/html/initializeDataBase.php in order to initialize the database with the following users:
+
+  * <b>Bob/bob</b> the administrator
+
+  * <b>Thibault/thibault</b> the user
+
+  * <b>Sebastien/sebastien</b> the other user
+
+6. You can now go to `localhost/index.php` to enjoy this amazing website.
+
+
+
+## Set up for CentOS VM
+
+0. To run on other server than W/M/LAMP change the information in the file "databaseConnection.php"
+
+1. Clone the repo https://github.com/ThibaultSchowing/html.git  in /var/www/ AFTER having removed the previous <i>http</i> folder.
 
 2. Run `sudo systemctl start httpd`
 
@@ -16,9 +40,11 @@
 
 4. You can now go to `localhost/index.php` to enjoy this amazing website.
 
-5. To run on W/M/LAMP change the information in the file "databaseConnection.php"
+
 
 ## User manual
+
+Note: the screenshots may vary.
 
 1. Login
 
