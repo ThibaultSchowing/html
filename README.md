@@ -1,10 +1,21 @@
+
+# Content
+
+This repo contains:
+
+  * This README file
+  * A presentation folder containing the report/presentation
+  * A initializeDataBase.php file, used to create the first user/password couples
+  * An img folder (the pictures of this README)
+  * The pages of this project including the "index.php" landing page. 
+
 # Set up and user manual
 
 ## Set up for WAMP server
 
 1. Clone the repo https://github.com/ThibaultSchowing/html.git  in WAMP's www directory AFTER having removed any previous <i>http</i> folder.
 
-2. Install phpLiteAdmin_v1-9-6 (also in www directory) or other version, you will have to adapt the url. You can download it at https://www.phpliteadmin.org/download/ 
+2. Install phpLiteAdmin_v1-9-6 (also in www directory) or other version, you will have to adapt the url. You can download it at https://www.phpliteadmin.org/download/
 
 3. Launch WAMP (or equivalent LAMP or MAMP) and verify the information in "databaseConnection.php" (set to WAMP default)
 
