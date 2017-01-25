@@ -7,7 +7,8 @@ This repo contains:
   * A presentation folder containing the report/presentation
   * A initializeDataBase.php file, used to create the first user/password couples
   * An img folder (the pictures of this README)
-  * The pages of this project including the "index.php" landing page. 
+  * The pages of this project including the "index.php" landing page.
+  * The "password.php" file is under MIT licence, http://www.opensource.org/licenses/mit-license.html, details in the file header. 
 
 # Set up and user manual
 
@@ -17,11 +18,11 @@ This repo contains:
 
 2. Install phpLiteAdmin_v1-9-6 (also in www directory) or other version, you will have to adapt the url. You can download it at https://www.phpliteadmin.org/download/
 
-3. Launch WAMP (or equivalent LAMP or MAMP) and verify the information in "databaseConnection.php" (set to WAMP default)
+3. Go to http://localhost/phpliteadmin_v1-9-6/phpliteadmin.php and create a database named "database.sqlite"
 
-4. Go to http://localhost/phpliteadmin_v1-9-6/phpliteadmin.php and create a database named "database.sqlite"
+4. Launch WAMP (or equivalent LAMP or MAMP) and verify the information in "databaseConnection.php" (set to WAMP default)
 
-5. Go to page http://localhost/html/initializeDataBase.php in order to initialize the database with the following users:
+5. Go to page http://localhost/html/initializeDataBase.php in order to initialize the database with the following user/password couples:
 
   * <b>Bob/bob</b> the administrator
 
@@ -29,7 +30,7 @@ This repo contains:
 
   * <b>Sebastien/sebastien</b> the other user
 
-6. You can now go to `localhost/index.php` to enjoy this amazing website.
+6. You can now go to http://localhost/html/index.php to enjoy this amazing website.
 
 
 
