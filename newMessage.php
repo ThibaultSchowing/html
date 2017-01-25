@@ -3,7 +3,7 @@
   ---------------------------------------------------------------------------
   Projet      : STI Messenger
   Fichier     : newMessage.php
-  Auteurs     : Thibault Schowing, Sébastien Henneberger
+  Auteurs     : Thibault Schowing, Sébastien Henneberger, Anastasia Zharkova
   Date        : 12.10.2016
   Description : Page permettant de rédiger un nouveau message.
   ---------------------------------------------------------------------------

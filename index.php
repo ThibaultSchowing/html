@@ -3,7 +3,7 @@
   ---------------------------------------------------------------------------
   Projet      : STI Messenger
   Fichier     : index.php
-  Auteurs     : Thibault Schowing, Sébastien Henneberger
+  Auteurs     : Thibault Schowing, Sébastien Henneberger, Anastasia Zharkova
   Date        : 12.10.2016
   Description : Page d'accueil de l'application web.
   Permet uniquement à un utilisateur de s'authentifier.

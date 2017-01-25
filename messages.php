@@ -3,7 +3,7 @@
   ---------------------------------------------------------------------------
   Projet		 : STI Messenger
   Fichier	 : messages.php
-  Auteurs	 : Thibault Schowing, Sébastien Henneberger
+  Auteurs	 : Thibault Schowing, Sébastien Henneberger, Anastasia Zharkova
   Date		 : 12.10.2016
   Description : Page permettant à l'utilisateur de traiter ses messages :
   - Ouverture des messages

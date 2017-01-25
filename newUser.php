@@ -3,7 +3,7 @@
   ---------------------------------------------------------------------------
   Projet      : STI Messenger
   Fichier     : newUser.php
-  Auteurs     : Thibault Schowing, Sébastien Henneberger
+  Auteurs     : Thibault Schowing, Sébastien Henneberger, Anastasia Zharkova
   Date        : 12.10.2016
   Description : Page permettant à un admin de créer un nouvel utilisateur.
   ---------------------------------------------------------------------------

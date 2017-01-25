@@ -4,7 +4,7 @@
   ---------------------------------------------------------------------------
   Projet      : STI Messenger
   Fichier     : functions.php
-  Auteurs     : Thibault Schowing, Sébastien Henneberger
+  Auteurs     : Thibault Schowing, Sébastien Henneberger, Anastasia Zharkova
   Date        : 12.10.2016
   Description : Fonctions permettant de manipuler la base de donnée :
   - deleteuser()
@@ -262,7 +262,8 @@ function getReceiverId($messageId) {
 
 function sendMessage($userIdTo, $subject, $message) {
     include("databaseConnection.php");
-    $sql = "INSERT INTO messages (message_subject, message_message, message_sender_id , message_receiver_id) VALUES (:subject, :message, :sender, :userIdTo);";
+    $sql = "INSERT INTO messages (message_subject, message_message, message_sender_id , message_receiver_id) 
+			VALUES (:subject, :message, :sender, :userIdTo);";
     $sth = $file_db->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
     $sth->execute(array(
         ':subject' => htmlspecialchars($subject),

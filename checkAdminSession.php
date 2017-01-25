@@ -4,7 +4,7 @@
   ---------------------------------------------------------------------------
   Projet      : STI Messenger
   Fichier     : checkAdminSession.php
-  Auteurs     : Thibault Schowing, Sébastien Henneberger
+  Auteurs     : Thibault Schowing, Sébastien Henneberger, Anastasia Zharkova
   Date        : 12.10.2016
   Description : Permet de vérifier si l'utilisateur authentifié est admin.
   S'il s'agit d'un utilisateur, il sera redirigé à la page de

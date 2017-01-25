@@ -4,7 +4,7 @@
   ---------------------------------------------------------------------------
   Projet      : STI Messenger
   Fichier     : switchUserState.php
-  Auteurs     : Thibault Schowing, Sébastien Henneberger
+  Auteurs     : Thibault Schowing, Sébastien Henneberger, Anastasia Zharkova
   Date        : 12.10.2016
   Description : Permet de changer l'état d'un utilisateur (actif ou non).
   ---------------------------------------------------------------------------

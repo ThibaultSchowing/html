@@ -4,7 +4,7 @@
   ---------------------------------------------------------------------------
   Projet      : STI Messenger
   Fichier     : logout.php
-  Auteurs     : Thibault Schowing, Sébastien Henneberger
+  Auteurs     : Thibault Schowing, Sébastien Henneberger, Anastasia Zharkova
   Date        : 12.10.2016
   Description : Permet de supprimer la session utilisateur courante.
   Puis, l'utilisateur est redirigé vers la page de login.

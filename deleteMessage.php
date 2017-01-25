@@ -4,7 +4,7 @@
   ---------------------------------------------------------------------------
   Projet      : STI Messenger
   Fichier     : deleteMessage.php
-  Auteurs     : Thibault Schowing, Sébastien Henneberger
+  Auteurs     : Thibault Schowing, Sébastien Henneberger, Anastasia Zharkova
   Date        : 12.10.2016
   Description : Permet de supprimer le mesage dont l'id est passé en
   paramètre à l'url.
