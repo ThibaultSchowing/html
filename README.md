@@ -8,7 +8,7 @@ This repo contains:
   * A initializeDataBase.php file, used to create the first user/password couples
   * An img folder (the pictures of this README)
   * The pages of this project including the "index.php" landing page.
-  * The "password.php" file is under MIT licence, http://www.opensource.org/licenses/mit-license.html, details in the file header. 
+  * The "password.php" file is under MIT licence, http://www.opensource.org/licenses/mit-license.html, details in the file header.
 
 # Set up and user manual
 
@@ -20,7 +20,7 @@ This repo contains:
 
 3. Go to http://localhost/phpliteadmin_v1-9-6/phpliteadmin.php and create a database named "database.sqlite"
 
-4. Launch WAMP (or equivalent LAMP or MAMP) and verify the information in "databaseConnection.php" (set to WAMP default)
+4. Launch WAMP (or equivalent LAMP or MAMP) and verify the information in "databaseConnection.php" (set to phpliteadmin default)
 
 5. Go to page http://localhost/html/initializeDataBase.php in order to initialize the database with the following user/password couples:
 
